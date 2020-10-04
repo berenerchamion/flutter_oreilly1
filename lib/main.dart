@@ -25,7 +25,7 @@ class _MyAppState extends State<MyApp> {
       'answers': [
         {'text': 'Black', 'score': 10},
         {'text': 'Blue', 'score': 6},
-        {'text': 'Red', 'score': 5},
+        {'text': 'Red', 'score': 4},
         {'text': 'Green', 'score': 3},
         {'text': 'Yellow', 'score': 1},
       ],
@@ -34,7 +34,7 @@ class _MyAppState extends State<MyApp> {
       'questionText': 'What\'s your favorite animal?',
       'answers': [
         {'text': 'Dog', 'score': 10},
-        {'text': 'Cat', 'score': 5},
+        {'text': 'Cat', 'score': 4},
         {'text': 'Zebra', 'score': 3},
         {'text': 'Snake', 'score': 2},
       ],
@@ -43,15 +43,15 @@ class _MyAppState extends State<MyApp> {
       'questionText': 'What\'s your favorite beer?',
       'answers': [
         {'text': 'Troeg\'s Perpetual IPA', 'score': 10},
-        {'text': 'Jai Alai IPA', 'score': 10},
-        {'text': 'Budweiser', 'score': 10},
-        {'text': 'Guinness', 'score': 10},
+        {'text': 'Jai Alai IPA', 'score': 5},
+        {'text': 'Budweiser', 'score': 3},
+        {'text': 'Guinness', 'score': 2},
       ],
     },
   ];
 
   void _answerQuestion(int score) {
-    
+
     _totalScore = _totalScore + score;
 
     setState(() {
@@ -79,7 +79,7 @@ class _MyAppState extends State<MyApp> {
                 questions: _questions,
                 questionIndex: _questionIndex,
               )
-            : Result(),
+            : Result(_totalScore),
       ), //End Scaffold
     ); //End MaterialApp
   }
