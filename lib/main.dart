@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import './question.dart';
-import './answer.dart';
 import './quiz.dart';
 import './result.dart';
 
@@ -66,6 +64,15 @@ class _MyAppState extends State<MyApp> {
     }
   }
 
+  void _resetQuiz() {
+
+    setState((){
+      _questionIndex = 0;
+      _totalScore = 0;
+    });
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -79,7 +86,7 @@ class _MyAppState extends State<MyApp> {
                 questions: _questions,
                 questionIndex: _questionIndex,
               )
-            : Result(_totalScore),
+            : Result(_totalScore, _resetQuiz),
       ), //End Scaffold
     ); //End MaterialApp
   }

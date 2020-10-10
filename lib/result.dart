@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 
 class Result extends StatelessWidget {
   final int result;
+  final Function resetHandler;
 
-  Result(this.result);
+  Result(this.result, this.resetHandler);
 
   String get resultString {
     String resultText;
@@ -34,9 +35,12 @@ class Result extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
             textAlign: TextAlign.center,
-          ), //texxt
+          ), //text
           FlatButton(
-            child: Text("Restart Quiz!"),
+            child: Text(
+              "Restart Quiz!",
+            ),
+            onPressed: resetHandler,
           ), //button
         ],
       ), //column
